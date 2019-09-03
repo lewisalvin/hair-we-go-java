@@ -18,7 +18,7 @@ public class AbstractController {
 
     protected User getUserFromSession(HttpSession session){
         Integer userId = (Integer) session.getAttribute(userSessionKey);
-        return userId == null ? null : userDao.findOne(userId);
+        return userId == null ? null : userDao.getOne(userId);
     }
 
     protected void setUserInSession(HttpSession session, User user){

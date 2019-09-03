@@ -1,15 +1,46 @@
 package org.launchcode.hairwegospring.models;
 
+
+
 import java.util.ArrayList;
+
+
 
 public class HairData {
 
-    String threeA;
-    String threeB;
-    String threeC;
-    String fourA;
-    String fourB;
-    String fourC;
+
+
+
+    String typeHair;
+
+
+    String hair;
+
+
+
+    public HairData(String typeHair, String hair){
+        this.typeHair = typeHair;
+        this.hair = hair;
+
+    }
+
+
+
+    public String getHair() {
+        return hair;
+    }
+    public void setHair(String hair) {
+        this.hair = hair;
+
+    }
+    public String getTypeHair(){
+        return typeHair;
+    }
+
+    public void setTypeHair(String typeHair){
+
+        this.typeHair = typeHair;
+    }
 
 
 

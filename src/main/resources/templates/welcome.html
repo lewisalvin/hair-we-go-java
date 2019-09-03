@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title th:text="${title}">Title</title>
 </head>
 <body>
-<h1 th:text="${title}"></h1>
+<h1 th:text="${title}"/>
 
-<p th:unless="${hairTypes} and ${hairTypes.size()}">no hair types :(</p>
+<form method ="post" commandName="hairData">
+    <table>
+        <div>
+            <input type="radio" th:field="*{typeHair}" th:value="Strategy" checked="true">
+            <label th:for="${#ids.prev('typeHair')}">Strategy</label>
+        </div>
+        <div>
+            <input type="radio" th:field="*{typeHair}" th:value="RPG">
+            <label th:for="${#ids.prev('typeHair')}">RPG</label>
+        </div>
+        <div>
+            <input type="radio" th:field="*{typeHair}" th:value="Stealth">
+            <label th:for="${#ids.prev('typeHair')}">Stealth</label>
+        </div>
+    </table>
+    <p th:unless="${hairTypes} and ${hairTypes.size()}"/>no hair types :(</p>
 
 
-<ul>
-    <li th:each="hairType : ${hairTypes}" th:text="${hairType}">
-        <input type="radio" th:field="*{radioButtonSelectedValues}" th:value="${hairType}"/>
-        <label th:for="${#ids.prev('radioButtonSelectedValues')}" th:text="${hairType}"></label>
-    </li>
-</ul>
+
+</form>
 
 
 

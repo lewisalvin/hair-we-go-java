@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<h1 th:text="${title}"></h1>
+
+<p th:text="Welcome"></p>
+
+<div>
+    <img src="../static/img/3aa.png" width="100"
+         th:src="@{img/3aa.png}"/>
+    <h2 th:text="3A"></h2>
+</div>
+
+<div>
+    <img src="../static/img/3bhair.jpg" width="100"
+         th:src="@{img/3bhair.jpg}"/>
+    <h2 th:text="3B"></h2>
+</div>
+
+<div>
+    <img src="../static/img/3chair.jpg" width="100"
+         th:src="@{img/3chair.jpg}"/>
+    <h2 th:text="3C"></h2>
+</div>
+
+<div>
+    <img src="../static/img/4ahair.jpg" width="100"
+         th:src="@{img/4ahair.jpg}"/>
+    <h2 th:text="4A"></h2>
+</div>
+
+<div>
+    <img src="../static/img/4bhair.jpg" width="100"
+         th:src="@{img/4bhair.jpg}"/>
+    <h2 th:text="4B"></h2>
+</div>
+
+<div>
+    <img src="../static/img/4chair.jpeg" width="100"
+         th:src="@{img/4chair.jpeg}"/>
+    <h2 th:text="4C"></h2>
+</div>
+
+</body>
+</html>

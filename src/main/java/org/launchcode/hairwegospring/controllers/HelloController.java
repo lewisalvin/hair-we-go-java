@@ -67,6 +67,11 @@ public class HelloController {
         return "redirect:/";
     }
 
+    @RequestMapping(value="display")
+    public String display(){
+        return "display";
+    }
+
 
     @RequestMapping(value="/welcome", method = RequestMethod.GET)
     public ModelAndView homePage() {
@@ -100,7 +105,7 @@ public class HelloController {
 
 
     @RequestMapping(value="/learn")
-    public String submitForm(Model model, HairData hairData){
+    public String submitForm(){
 
         //model.addAttribute("hairData", hairData);
         return "learn";

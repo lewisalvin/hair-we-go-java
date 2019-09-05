@@ -45,5 +45,26 @@
     <h2 th:text="4C"></h2>
 </div>
 
+<form name='f' th:object="${personForm}" method='POST'>
+    <table>
+        <tr>
+            <td>Select Hair Type:</td>
+            <td>
+                <select th:field="*{typeId}">
+                    <option value=""> -- </option>
+                    <option th:each="hairs : ${hair}"
+                            th:value="${hairs.typeId}"
+                            th:utext="${hairs.typeName}"/>
+                </select>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td><input name="submit" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+</form>
+
 </body>
 </html>

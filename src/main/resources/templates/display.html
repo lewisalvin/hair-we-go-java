@@ -3,48 +3,65 @@
 <head>
     <meta charset="UTF-8"/>
     <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
 </head>
 <body>
-<h1 th:text="${title}"></h1>
 
-<p th:text="Welcome"></p>
+
+<h1>Welcome!</h1>
+<p></p>
+
+<h2>Select Your Hair Type</h2>
+
+<br />
 
 <div>
     <img src="../static/img/3aa.png" width="100"
          th:src="@{img/3aa.png}"/>
-    <h2 th:text="3A"></h2>
+    <h3>3A</h3>
 </div>
+
+<p></p>
 
 <div>
     <img src="../static/img/3bhair.jpg" width="100"
          th:src="@{img/3bhair.jpg}"/>
-    <h2 th:text="3B"></h2>
+    <h3>3B</h3>
 </div>
+
+<p></p>
 
 <div>
     <img src="../static/img/3chair.jpg" width="100"
          th:src="@{img/3chair.jpg}"/>
-    <h2 th:text="3C"></h2>
+    <h3>3C</h3>
 </div>
+
+<p></p>
 
 <div>
     <img src="../static/img/4ahair.jpg" width="100"
          th:src="@{img/4ahair.jpg}"/>
-    <h2 th:text="4A"></h2>
+    <h3>4A</h3>
 </div>
+
+<p></p>
 
 <div>
     <img src="../static/img/4bhair.jpg" width="100"
          th:src="@{img/4bhair.jpg}"/>
-    <h2 th:text="4B"></h2>
+    <h3>4B</h3>
 </div>
+
+<p></p>
 
 <div>
     <img src="../static/img/4chair.jpeg" width="100"
          th:src="@{img/4chair.jpeg}"/>
-    <h2 th:text="4C"></h2>
+    <h3>4C</h3>
 </div>
-
+<!--/*
 <form name='f' th:object="${personForm}" method='POST'>
     <table>
         <tr>
@@ -64,6 +81,20 @@
             <td><input name="submit" type="submit" value="submit" /></td>
         </tr>
     </table>
+</form>
+*/-->
+
+<form th:object="${personForm}" method="post">
+    <fieldset>
+        <legend>Your Hair Type</legend>
+        <ul>
+            <li th:each="hairs : ${hair}">
+                <input type="radio" th:field="${personForm.typeId}" th:value="${hairs.typeId}" />
+                <label th:for="${hairs.typeId}" th:text="${hairs.typeName}"></label>
+            </li>
+        </ul>
+    </fieldset>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 
 </body>

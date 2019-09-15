@@ -1,9 +1,12 @@
 package org.launchcode.hairwegospring.models;
 
+import javax.validation.constraints.NotNull;
+
 public class PersonForm {
 
     private String fullName;
 
+    @NotNull(message = "Must select hair type")
     private Long typeId;
 
     public String getFullName() {

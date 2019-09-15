@@ -8,11 +8,16 @@ import org.launchcode.hairwegospring.models.PersonForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -60,7 +65,7 @@ public class HelloController {
 
 
     @RequestMapping(value = { "/display" }, method = RequestMethod.GET)
-    public String selectOptionExample1Page(Model model) {
+    public String displayForm(Model model) {
 
         PersonForm form = new PersonForm();
         model.addAttribute("personForm", form);
@@ -70,6 +75,32 @@ public class HelloController {
 
         return "display";
     }
+
+    @RequestMapping(value ="/display", method = RequestMethod.POST)
+    public String processDisplayForm(@ModelAttribute("personForm") @Valid PersonForm personForm, BindingResult result, HttpServletRequest request, Errors errors, Model model){
+
+        PersonForm form = new PersonForm();
+        model.addAttribute(new PersonForm());
+
+        List<styleType> list = hairDAO.getHairTypes();
+        model.addAttribute("hair", list);
+
+        if(errors.hasErrors()){
+            return "display";
+        }
+
+        if(!errors.hasErrors()){
+            return "redirect:/learn";
+        }
+
+
+
+        return "display";
+
+
+
+    }
+
 
 
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+<head th:replace="fragments :: head">
     <meta charset="UTF-8"/>
     <title th:text="${title}">Title</title>
 
-    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+
 </head>
 <body>
 
@@ -89,13 +89,16 @@
         <legend>Your Hair Type</legend>
         <ul>
             <li th:each="hairs : ${hair}">
-                <input type="radio" th:field="${personForm.typeId}" th:value="${hairs.typeId}" />
+                <input type="radio" name="selectHair" th:field="${personForm.typeId}" th:value="${hairs.typeId}" />
                 <label th:for="${hairs.typeId}" th:text="${hairs.typeName}"></label>
+                <span th:errors="*{typeId}" class="error"></span>
             </li>
         </ul>
     </fieldset>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
+
+
 
 </body>
 </html>

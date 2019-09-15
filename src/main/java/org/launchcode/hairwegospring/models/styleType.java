@@ -1,9 +1,18 @@
 package org.launchcode.hairwegospring.models;
 
+import javax.validation.constraints.NotNull;
+
 public class styleType {
 
+
+
+    @NotNull
     private Long typeId;
+
+    @NotNull
     private String typeCode;
+
+    @NotNull
     private String typeName;
 
     public styleType() {

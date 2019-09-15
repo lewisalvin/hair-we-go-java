@@ -36,6 +36,12 @@ public class HairDAO {
         return hair;
     }
 
+    //public String PersonForm
+
+    public Long findByTypeId(Long typeId) {
+        return typeId;
+    }
+
     public Map<Long, String> getMapCountries() {
         Map<Long, String> map = new HashMap<Long, String>();
         for (styleType c : hair) {

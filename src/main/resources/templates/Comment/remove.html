@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+
+    <div th:each="post : ${comments}" class="checkbox">
+        <input type="checkbox" name="comment" th:value="${post.name}" th:id="${post.name}"/>
+        <label th:for="${post.name}" th:text="${post.name}"></label>
+        <br />
+    </div>
+
+    <input type="submit" value="Remove Comment" />
+</form>
+
+</body>
+</html>

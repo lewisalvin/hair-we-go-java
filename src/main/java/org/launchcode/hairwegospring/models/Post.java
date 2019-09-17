@@ -11,7 +11,7 @@ public class Post extends AbstractUser {
 
     private String author;
 
-    public Post(String title, String body, String author){
+    public Post(String title, String body){
         super();
         this.title = title;
         this.body = body;

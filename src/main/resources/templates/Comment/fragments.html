@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<nav th:fragment="navigation">
+    <a href="/comment">List</a> |
+    <a href="/comment/add">Add</a> |
+    <a href="/comment/remove">Remove</a>
+</nav>
+
+</body>
+</html>

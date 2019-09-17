@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label for="name-field">Title</label>
+        <input class="form-control" id="name-field" type="text" name="commentName" />
+    </div>
+    <div class="form-group">
+        <label for="desc-field">Body</label>
+        <input class="form-control" id="desc-field" type="text" name="commentDescription" />
+    </div>
+    <input type="submit" value="Add Comment" />
+</form>
+
+
+</body>
+</html>

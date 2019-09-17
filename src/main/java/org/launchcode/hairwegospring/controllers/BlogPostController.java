@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("blog")
 public class BlogPostController {
+
+
 
     @RequestMapping(value = "newPost", method = RequestMethod.GET)
     public String newPostForm() {

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<h1>Blog Posts</h1>
+
+
+<!--<div th:each="post : ${posts}">
+
+    <h2><a th:href="'/blog/' + ${post.author.username} + '/' + ${post.uid}" th:text="${post.title}"></a></h2>
+    <p th:text="${post.body}"></p>
+    <p class="post-author">written by <a th:href="'/blog/' + ${post.author.username}" th:text="${post.author.username}"></a></p>
+
+</div>
+-->
+
+<span th:text="${post.title}"></span>
+<span th:text="${post.author}"></span>
+<span th:text="${post.body}"></span>
+</form>
+
+
+</body>
+</html>

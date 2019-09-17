@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+
+    <link href="../static/css/sketch.css" th:href="@{/css/sketch.css}" rel="stylesheet"/>
+</head>
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Post About Your Journey</h1>
+        <form method="post">
+            <label>
+                <div>Title</div>
+                <input type="text" name="title" th:value="${title}"/>
+            </label>
+            <label>
+                <div>Post</div>
+                <textarea name="body" th:text="${body}">body</textarea>
+            </label>
+            <div class="error" th:text="${error}">error</div>
+            <input type="submit"/>
+
+
+
+        </form>
+
+
+
+</body>
+</html>
